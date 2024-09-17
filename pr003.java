@@ -68,5 +68,26 @@ class pr003 {
 				default: 
 					System.out.println("ii больше или равно 5");
 			}
+
+		//Пример вложенного switch
+		System.out.println();
+		char ch1= 'q', ch2 = 'h';
+		switch(ch1) {
+			case 'q':
+				System.out.println("Внешний switch");
+				switch(ch2) {
+					case 'q':
+						System.out.println("Внешний switch");
+						break;
+                                        case 'h':
+                                                System.out.println("Внутренний switch");
+						break;
+
+				}
+				break;
+			case 'h':
+				System.out.println("Не выведется");
+				break;
 		}
 	}
+}
