@@ -41,6 +41,31 @@ class Arrays {
                         if (sample2[i] > max) max = sample2[i];
                 }
                 System.out.println("Минимальное и максимальное значене: " + min + " " + max);
+		
+		//Пузырьковая сортировка
+		System.out.println();
+		int size = sample2.length;
+		int a, b, t;
+		//Отображение исходного массива
+		System.out.println("Исходный массив: ");
+		for(i=0; i < size; i++)
+			System.out.println(" " + sample2[i]);
+		System.out.println();
+
+		//Собственно сортировка
+		for(a=1; a < size; a++)
+			for(b=size-1; b >= a; b--) {
+				if(sample2[b-1]>sample2[b]) {
+					t = sample2[b-1];
+					sample2[b-1] = sample2[b];
+					sample2[b] = t;
+				}
+			}
+		//отображение от сортирового массива
+		System.out.println("Отсортированный массив:");
+		for(i=0; i < size; i++)
+                        System.out.println(" " + sample2[i]);
+                System.out.println();
 
 	}
 }
