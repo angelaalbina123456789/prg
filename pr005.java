@@ -49,7 +49,7 @@ class Arrays {
 		//Отображение исходного массива
 		System.out.println("Исходный массив: ");
 		for(i=0; i < size; i++)
-			System.out.println(" " + sample2[i]);
+			System.out.print(" " + sample2[i]);
 		System.out.println();
 
 		//Собственно сортировка
@@ -64,8 +64,55 @@ class Arrays {
 		//отображение от сортирового массива
 		System.out.println("Отсортированный массив:");
 		for(i=0; i < size; i++)
-                        System.out.println(" " + sample2[i]);
+                        System.out.print(" " + sample2[i]);
                 System.out.println();
+		
+		//Двумерные массивы
+		System.out.println();
+		int [][] arr2D = new int [10][20];
+		int t2, i2;
+		for(t2=0; t2<10; t2++) {
+			for(i2=10; i2<30; i2++) {
+				arr2D[t2][i2-10] = (t2*10)+i2+1;
+				if (t2==0)
+					System.out.print(arr2D[t2][i2-10] + "  ");
+				else
+					System.out.print(arr2D[t2][i2-10] + " ");
+
+			}
+			System.out.println();
+		}
+
+		//Двумерные массивы с разным кол-во элементов в строке
+		System.out.println();
+
+		int [][] riders = new int[7][];
+		riders[0] = new int[10];
+		riders[1] = new int[10];
+		riders[2] = new int[10];
+		riders[3] = new int[10];
+		riders[4] = new int[10];
+		riders[5] = new int[2];
+		riders[6] = new int[2];
+		
+		for(int i3=0; i3<7; i3++)
+			for(int j3=0; j3<riders[i3].length; j3++)
+				riders[i3][j3] = i3 + j3 + 10;
+
+		System.out.println("Количество пассажиров в рабочие дни недели: ");
+		for(int i3=0; i3<5; i3++) {
+                        for(int j3=0; j3<riders[i3].length; j3++)
+				System.out.print(riders[i3][j3] + " ");
+			System.out.println();	
+		}
+	
+		System.out.println();
+		System.out.println("Количество пассажиров в выходные дни недели: ");
+                for(int i3=5; i3<7; i3++) {
+                        for(int j3=0; j3<2; j3++)
+                                System.out.print(riders[i3][j3] + " ");
+                        System.out.println();
+                }
 
 	}
 }
