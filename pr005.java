@@ -183,7 +183,120 @@ class Arrays {
 		System.out.println("Сумма: " + summ);
 		if(found)
 			System.out.println("Значение найдено");
+		
+		//Работа  со строками
+		System.out.println();
+		String str1 = new String("СтрокаACD");
+		String str2 = "СтрокаABB";
+		String str3 = new String(str2);
+		String str4 = new String(str2);
+		//Эксперименты со ссылочными переменными str2 and str3
+		str3 = str2;
+		System.out.println(str3 + " " + str2);
+		if (str3 == str2)
+			System.out.println("Ссылки указывют на один и тот же объект");
+		else
+			System.out.println("Ссылки указывают на разные объекты");
+		
+		//Методы, выполняемые для строковых объектов
+		//Методы сравнение строк
+		System.out.println();
+		if (str1.equals(str2))
+			System.out.println("Строки str1 and str3 равны");
+		else
+			System.out.println("Строка srt1 and str2 не равны");
+		if (str3.equals(str4))
+			System.out.println("Строки str3 and str4 равны");
+		else
+			System.out.println("Строки str3 and str4 не равны");
 
+		//использование оператора сравнения для проверки равенства ссылок str1 and str2
+		if(str1==str2)
+			System.out.println();
+		int result;
+		result = str1.compareTo(str3);
+		System.out.println("Результаты сравнения строк: " + result);
+		
+
+		//определение длины строки
+		System.out.println("Длина строки str1: " + str1.length());
+
+		//возврат символа в строке по номеру индекса
+		System.out.println("Первый символ в строке str1: " + str1.charAt(0) + "\n" + ((int)str1.charAt(1)));
+		
+		char ch;
+		for (int i3 = 0; i3 < str1.length(); i3++)
+			System.out.print(str1.charAt(i3));
+		System.out.println();
+
+		//Возврат индекса, с котоого начинается подстрока
+		System.out.println("Первое вхождение подстроки \"рок\" в str2: " + str2.indexOf("рок"));
+		System.out.println("Первое вхождение подстроки \"рок\" в str2: " + str2.lastIndexOf("рок"));
+
+		//Массивы строк
+		System.out.println();
+		String[] strs = {"Элементы", "строкого", "массива", "для", "примера"};
+		System.out.println("Искходный массив: ");
+		for (String s : strs)
+			System.out.println(s + " ");
+		System.out.println("\n");
+
+		strs[1] = "измененного строквого";
+		strs[3] = "для еще одного";
+
+		System.out.println("Измененный массив: ");
+		for (String s : strs)
+			System.out.print(" " + s);
+		System.out.println("\n");
+
+		//Использование подстрок
+		str2 = "";
+		for (String s : strs)
+			str2 += " " + s;
+		System.out.println("Строка str2: " + str2);
+		String substr = str2.substring(10, 33);
+		System.out.println("Строка str2: " + str2 + "\nПодстрока substr: " + substr);
+
+		//Оператор switch, управляемый строками
+
+		String command = "disconnect";
+		switch(command) {
+			case "connect":
+				System.out.println("Подключение");
+				break;
+			case "cancel":
+                                System.out.println("Отмена");
+				break;
+			case "disconnect":
+                                System.out.println("Отключение");
+				break;
+			default:
+                                System.out.println("Неверная команда");
+				break;
+		}
+		//Текстовые блоки
+		String str5 = """
+			Просто текст
+			Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+
+		Еще один текст
+		Нет никого, кто любил бы боль саму по себе, кто искал бы её и кто хотел бы иметь её просто потому, что это боль
+
+			""";
+
+		System.out.println("Текстовый блок str5: " + str5);
+
+		//Аргументы командной строки
+		//
+		System.out.println("""
+				1
+				2
+				3
+				""");
+		System.out.println("Программе передано " + args.length + " агрументов");
+		System.out.println("Список аргументов: ");
+		for (String s : args)
+			System.out.println(s);
 
 	}
 }
