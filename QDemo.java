@@ -1,7 +1,7 @@
 //Очередь
 class Queue {
-	char[] q;
-	int putloc, getloc; //указатели на элементы очереди
+	private char[] q;
+	private int putloc, getloc; //указатели на элементы очереди
 
 	Queue (int size) {
 		q = new char[size];
@@ -9,7 +9,7 @@ class Queue {
 	}
 
 	//Метод для помещения символа в очередь
-	void put(char ch) {
+	public void put(char ch) {
 		if(putloc==q.length) {
 			System.out.println(" - невозможно вставить симвом, так как очередь переполнена.");
 			return;
@@ -18,7 +18,7 @@ class Queue {
 	}
 
 	//Метод для извлечения символа из очереди
-	char get() {
+	public char get() {
 		if(getloc == putloc) {
 			System.out.println(" - невозможно извлечь символ, так как очередь пуста.");
 			return (char) 0;
@@ -60,6 +60,8 @@ class QDemo {
 			ch = smallQ.get();
 			if(ch != (char) 0) System.out.print(ch);
 		}
-
+		
+		//big.Q[3] = 'E'; попытка изменения значения у закрытой переменной класса
+		//bigQ.putloc = 50; попытка изменения закрытого указателя в классе Queue
 	}
 }
