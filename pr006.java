@@ -40,7 +40,7 @@ class pr006 {
 		//Приммитивное цивровое (побитовая операция "исключающее ИЛИ"
 		System.out.println();
 		String msg = "Исходная тестовая строка";
-		String enmsg = "";
+		String encmsg = "";
 		String decmsg = "";
 		int key = 88;
 
@@ -55,10 +55,10 @@ class pr006 {
 
 		//дешивфровка сообщение:
 		for (int i=0; i<msg.length(); i++)
-			decmsg = decmsg + (char) (encmsg.chatAt(i) ^ key);
+			decmsg = decmsg + (char) (encmsg.charAt(i) ^ key);
 
 		System.out.print("дешифрованное сообщение: ");
-		System.out.println(descmsg);
+		System.out.println(decmsg);
 
 		//операция побитового "не"
 		byte b = -34;
@@ -74,9 +74,9 @@ class pr006 {
 
 		for(int t1=128; t1>0; t1=t1/2) {
 			if((b & t1) !=0)
-				Syetem.out.print("1 ");
+				System.out.print("1 ");
 			else
-				System.out.prin("0 ");
+				System.out.print("0 ");
 		}
 		System.out.println();
 
@@ -105,6 +105,24 @@ class pr006 {
                         System.out.println();
                         v = v >> 1;
                 }
+
+		//операция ?
+		System.out.println();
+		//Выражение1 ? выражение2 : выражение3
+		//привмер вычисления абсолютного значения val2
+		int val2 = -25;
+		int absval = val2 < 0 ? -val2 : val2;
+
+		//пример исключения деления на ноль
+		int result;
+		for (int i = -5; i<6; i++) {
+			result = i != 0 ? 100/i : 0;
+			if (i != 0)
+				System.out.println("100 / " + i + " равно " + result);
+		}
+		System.out.println();
+
+
 	}
 }
 
