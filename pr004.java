@@ -1,7 +1,7 @@
 class Avtomobil {
-	int pass; //количество псажиров
-	int v; //объем топливного бака в л.
-	double rash; //расход топлива в л. на 100 км.
+	private int pass; //количество псажиров
+	private int v; //объем топливного бака в л.
+	private double rash; //расход топлива в л. на 100 км.
 
 	Avtomobil(int p, int V, double r) {
 		pass = p;
@@ -22,12 +22,51 @@ class Avtomobil {
 	double fuelNeeded(int km) {
 		return ((double) km/100)*rash;
 	}
+
+	//методы доступа с перемнным экземпляра
+	int getPass() {
+		return pass;
+	}
+	void setPass(int p) {
+		pass = p;
+	}
+	int getV() {
+		return v;
+	}
+	void setV(int V) {
+		v = V;
+	}
+	double getRash() {
+		return rash;
+	}
+	void setRash(double r) {
+		rash = r;
+	}
+}
+class Truck extends Avtomobil {
+	private int cargocap; //грузподъемность
+
+	//конструктор
+	Truck(int p, int V, double r, int c) {
+		super(p, V, r);
+		cargocap = c;
+	}
+
+	int getCargo() {
+		return cargocap;
+	}
+	void putCargo(int c) {
+		cargocap = c;
+	}
+
 }
 class pr004 {
 	public static void main(String args[]) {
 		//создание экземпляров класса
 		Avtomobil lada = new Avtomobil(4, 40, 5.5);
 		Avtomobil porshe = new Avtomobil(1, 100, 14.0);
+		Truck gazelnext = new Truck(2, 100, 25.5, 3500);
+		Truck ural = new Truck(3, 200, 35.1, 5000);
 		int rasst, rasst2;
 
 		//присваивание значений внутренним переменным экземпляра класса
@@ -41,9 +80,12 @@ class pr004 {
 		porshe.rash = 14.0; 
 		*/
 
-		System.out.println("Для расстояния в 10 км нужно " + lada.fuelNeeded(10) + "литров");
+		System.out.println("Для расстояния в 10 км lada нужно " + lada.fuelNeeded(10) + "литров");
+		System.out.println("Для расстояния в 10 км gazel нужно " + gazelnext.fuelNeeded(10) + "литров");
+		System.out.println("Для расстояния в 10 км ural нужно " + ural.fuelNeeded(10) + "литров");
+		System.out.println("урал перевезет " + ural.getCargo() + "ru");
 		rasst=10;
-		System.out.println("Для расстояния в 10 км нужно " + lada.fuelNeeded(rasst) + "литров");
+		System.out.println("Для расстояния в 10 км poshe нужно " + porshe.fuelNeeded(rasst) + "литров");
 
 
 
