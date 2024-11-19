@@ -3,6 +3,7 @@ class TwoDShape {
 	private double width;
 	private double height;
 
+	int common;
 	//конструктор без параметров
 	TwoDShape() {
 		width = height = 0.0;
@@ -40,6 +41,7 @@ class TwoDShape {
 }
 class Triangle extends TwoDShape {
 	String style;
+	int common;
 
 	//конструктор по умолчанию
 	Triangle() {
@@ -59,6 +61,13 @@ class Triangle extends TwoDShape {
 		super(x);
 		style = "закрашенный";
 	}
+	//конструктор с демонстрацией доступа с одноименной суперкласс
+	Triangle(int a, int b) {
+		super.common = a;
+		common = b;
+		System.out.println("значение common в суперклассе" + super.common);
+		System.out.println("значение common в подклассе" + common);
+	}
 	double area() {
 		return getWidth()*getHeight()/2;
 	}
@@ -70,6 +79,7 @@ class Triangle extends TwoDShape {
 class Rectangle extends TwoDShape {
 	String outline;
 
+	int common;
 	//конструкторы
 	Rectangle() {
 		super();
@@ -86,6 +96,12 @@ class Rectangle extends TwoDShape {
 		super(x);
 		outline = "сплошная";
 	}
+	//конструктор с демонстрацией доступа с одноименной суперкласс
+        Rectangle(int a, int b) {
+                super.common = a;
+                common = b;
+        }
+
 	double area() {
 		return getWidth()*getHeight();
 	}
@@ -103,8 +119,10 @@ class pr009 {
 		Triangle t1 = new Triangle();
 		Triangle t2 = new Triangle("контурный", 8.0, 12.0);
 		Triangle t3 = new Triangle(4.0);
+		Triangle t4 = new Triangle(5, 10);
 		Rectangle r1 = new Rectangle("сплошная", 4.0, 4.0);
 		Rectangle r2 = new Rectangle(5.0);
+		System.out.println();
 /*		t1.setWidth(4.0);
 		t1.setHeight(4.0);
 		t1.style = "закрашенный";
