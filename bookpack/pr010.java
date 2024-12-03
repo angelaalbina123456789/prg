@@ -1,4 +1,5 @@
 package bookpack;
+/*
 class Book {
 	private String title;
 	private String author;
@@ -17,6 +18,7 @@ class Book {
 		System.out.println();
 	}
 }
+*/
 
 class pr010 {
 	public static void main(String[] args) {
