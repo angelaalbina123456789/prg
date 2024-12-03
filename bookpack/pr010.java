@@ -4,13 +4,13 @@ class Book {
 	private String author;
 	private int pubDate;
 
-	Book(String t, String a, int d) {
+	public Book(String t, String a, int d) {
 		title = t;
 		author = a;
 		pubDate  = d;
 	}
 
-	void show() {
+	public void show() {
 		System.out.println(title);
 		System.out.println(author);
 		System.out.println(pubDate);
